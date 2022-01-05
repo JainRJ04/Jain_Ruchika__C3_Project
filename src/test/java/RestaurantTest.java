@@ -83,4 +83,17 @@ class RestaurantTest {
                 () -> restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    //<<<<<<<<<<<<<<<<<<<<<<<ORDER TOTAL>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void getOrderTotal_should_return_sumof_price_of_2items_if_2_items_are_Selected_by_user() {
+        List<Item> items=new ArrayList<>();
+        Item item1=new Item("Sweet corn soup", 119);
+        items.add(item1);
+        Item item2=new Item("Vegetable lasagne", 269);
+        items.add(item2);
+        int total=item1.getPrice()+item2.getPrice();
+        assertEquals(total,restaurant.getOrderTotal(items));
+    }
+
+    //<<<<<<<<<<<<<<<<<<<<<<<ORDER TOTAL>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
